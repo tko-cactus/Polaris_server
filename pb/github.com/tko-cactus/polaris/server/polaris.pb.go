@@ -29,62 +29,6 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
-// ユーザ情報
-type User struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Id   int64  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-}
-
-func (x *User) Reset() {
-	*x = User{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_polaris_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *User) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*User) ProtoMessage() {}
-
-func (x *User) ProtoReflect() protoreflect.Message {
-	mi := &file_polaris_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use User.ProtoReflect.Descriptor instead.
-func (*User) Descriptor() ([]byte, []int) {
-	return file_polaris_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *User) GetId() int64 {
-	if x != nil {
-		return x.Id
-	}
-	return 0
-}
-
-func (x *User) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
 type People struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -96,7 +40,7 @@ type People struct {
 func (x *People) Reset() {
 	*x = People{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_polaris_proto_msgTypes[1]
+		mi := &file_polaris_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -109,7 +53,7 @@ func (x *People) String() string {
 func (*People) ProtoMessage() {}
 
 func (x *People) ProtoReflect() protoreflect.Message {
-	mi := &file_polaris_proto_msgTypes[1]
+	mi := &file_polaris_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -122,7 +66,7 @@ func (x *People) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use People.ProtoReflect.Descriptor instead.
 func (*People) Descriptor() ([]byte, []int) {
-	return file_polaris_proto_rawDescGZIP(), []int{1}
+	return file_polaris_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *People) GetNumOfPerson() int32 {
@@ -144,7 +88,7 @@ type Beacon struct {
 func (x *Beacon) Reset() {
 	*x = Beacon{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_polaris_proto_msgTypes[2]
+		mi := &file_polaris_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -157,7 +101,7 @@ func (x *Beacon) String() string {
 func (*Beacon) ProtoMessage() {}
 
 func (x *Beacon) ProtoReflect() protoreflect.Message {
-	mi := &file_polaris_proto_msgTypes[2]
+	mi := &file_polaris_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -170,7 +114,7 @@ func (x *Beacon) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Beacon.ProtoReflect.Descriptor instead.
 func (*Beacon) Descriptor() ([]byte, []int) {
-	return file_polaris_proto_rawDescGZIP(), []int{2}
+	return file_polaris_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Beacon) GetId() int32 {
@@ -192,7 +136,7 @@ type UserAndBeacon struct {
 func (x *UserAndBeacon) Reset() {
 	*x = UserAndBeacon{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_polaris_proto_msgTypes[3]
+		mi := &file_polaris_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -205,7 +149,7 @@ func (x *UserAndBeacon) String() string {
 func (*UserAndBeacon) ProtoMessage() {}
 
 func (x *UserAndBeacon) ProtoReflect() protoreflect.Message {
-	mi := &file_polaris_proto_msgTypes[3]
+	mi := &file_polaris_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -218,7 +162,7 @@ func (x *UserAndBeacon) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserAndBeacon.ProtoReflect.Descriptor instead.
 func (*UserAndBeacon) Descriptor() ([]byte, []int) {
-	return file_polaris_proto_rawDescGZIP(), []int{3}
+	return file_polaris_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *UserAndBeacon) GetUsr() *User {
@@ -248,7 +192,7 @@ type Room struct {
 func (x *Room) Reset() {
 	*x = Room{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_polaris_proto_msgTypes[4]
+		mi := &file_polaris_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -261,7 +205,7 @@ func (x *Room) String() string {
 func (*Room) ProtoMessage() {}
 
 func (x *Room) ProtoReflect() protoreflect.Message {
-	mi := &file_polaris_proto_msgTypes[4]
+	mi := &file_polaris_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -274,7 +218,7 @@ func (x *Room) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Room.ProtoReflect.Descriptor instead.
 func (*Room) Descriptor() ([]byte, []int) {
-	return file_polaris_proto_rawDescGZIP(), []int{4}
+	return file_polaris_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Room) GetBeacon() *Beacon {
@@ -292,7 +236,7 @@ func (x *Room) GetName() string {
 }
 
 // 1つの部屋の在室状況
-type Place struct {
+type RoomStatus struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -302,8 +246,70 @@ type Place struct {
 	Num    *People `protobuf:"bytes,3,opt,name=num,proto3" json:"num,omitempty"`
 }
 
-func (x *Place) Reset() {
-	*x = Place{}
+func (x *RoomStatus) Reset() {
+	*x = RoomStatus{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_polaris_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RoomStatus) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RoomStatus) ProtoMessage() {}
+
+func (x *RoomStatus) ProtoReflect() protoreflect.Message {
+	mi := &file_polaris_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RoomStatus.ProtoReflect.Descriptor instead.
+func (*RoomStatus) Descriptor() ([]byte, []int) {
+	return file_polaris_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *RoomStatus) GetBeacon() *Beacon {
+	if x != nil {
+		return x.Beacon
+	}
+	return nil
+}
+
+func (x *RoomStatus) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *RoomStatus) GetNum() *People {
+	if x != nil {
+		return x.Num
+	}
+	return nil
+}
+
+// 登録した全ての部屋の在室状況
+type RoomStatusList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RoomStats []*RoomStatus `protobuf:"bytes,1,rep,name=roomStats,proto3" json:"roomStats,omitempty"`
+}
+
+func (x *RoomStatusList) Reset() {
+	*x = RoomStatusList{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_polaris_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -311,13 +317,13 @@ func (x *Place) Reset() {
 	}
 }
 
-func (x *Place) String() string {
+func (x *RoomStatusList) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Place) ProtoMessage() {}
+func (*RoomStatusList) ProtoMessage() {}
 
-func (x *Place) ProtoReflect() protoreflect.Message {
+func (x *RoomStatusList) ProtoReflect() protoreflect.Message {
 	mi := &file_polaris_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -329,76 +335,14 @@ func (x *Place) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Place.ProtoReflect.Descriptor instead.
-func (*Place) Descriptor() ([]byte, []int) {
+// Deprecated: Use RoomStatusList.ProtoReflect.Descriptor instead.
+func (*RoomStatusList) Descriptor() ([]byte, []int) {
 	return file_polaris_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *Place) GetBeacon() *Beacon {
+func (x *RoomStatusList) GetRoomStats() []*RoomStatus {
 	if x != nil {
-		return x.Beacon
-	}
-	return nil
-}
-
-func (x *Place) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-func (x *Place) GetNum() *People {
-	if x != nil {
-		return x.Num
-	}
-	return nil
-}
-
-// 登録した全ての部屋の在室状況
-type Places struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Places []*Place `protobuf:"bytes,1,rep,name=places,proto3" json:"places,omitempty"`
-}
-
-func (x *Places) Reset() {
-	*x = Places{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_polaris_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *Places) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*Places) ProtoMessage() {}
-
-func (x *Places) ProtoReflect() protoreflect.Message {
-	mi := &file_polaris_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use Places.ProtoReflect.Descriptor instead.
-func (*Places) Descriptor() ([]byte, []int) {
-	return file_polaris_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *Places) GetPlaces() []*Place {
-	if x != nil {
-		return x.Places
+		return x.RoomStats
 	}
 	return nil
 }
@@ -409,10 +353,8 @@ var file_polaris_proto_rawDesc = []byte{
 	0x0a, 0x0d, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12,
 	0x2c, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f,
 	0x63, 0x61, 0x63, 0x74, 0x75, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70,
-	0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x22, 0x2a, 0x0a,
-	0x04, 0x55, 0x73, 0x65, 0x72, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x2a, 0x0a, 0x06, 0x50, 0x65, 0x6f,
+	0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x1a, 0x0a, 0x75,
+	0x73, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x2a, 0x0a, 0x06, 0x50, 0x65, 0x6f,
 	0x70, 0x6c, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x6e, 0x75, 0x6d, 0x4f, 0x66, 0x50, 0x65, 0x72, 0x73,
 	0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0b, 0x6e, 0x75, 0x6d, 0x4f, 0x66, 0x50,
 	0x65, 0x72, 0x73, 0x6f, 0x6e, 0x22, 0x18, 0x0a, 0x06, 0x42, 0x65, 0x61, 0x63, 0x6f, 0x6e, 0x12,
@@ -434,51 +376,54 @@ var file_polaris_proto_rawDesc = []byte{
 	0x6c, 0x61, 0x72, 0x69, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x42, 0x65, 0x61,
 	0x63, 0x6f, 0x6e, 0x52, 0x06, 0x62, 0x65, 0x61, 0x63, 0x6f, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x6e,
 	0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22,
-	0xb1, 0x01, 0x0a, 0x05, 0x50, 0x6c, 0x61, 0x63, 0x65, 0x12, 0x4c, 0x0a, 0x06, 0x62, 0x65, 0x61,
-	0x63, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
-	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f, 0x63, 0x61, 0x63, 0x74, 0x75,
-	0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69,
-	0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x42, 0x65, 0x61, 0x63, 0x6f, 0x6e, 0x52,
-	0x06, 0x62, 0x65, 0x61, 0x63, 0x6f, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x46, 0x0a, 0x03, 0x6e,
-	0x75, 0x6d, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x67,
-	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f, 0x63, 0x61, 0x63, 0x74, 0x75, 0x73,
-	0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73,
-	0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x50, 0x65, 0x6f, 0x70, 0x6c, 0x65, 0x52, 0x03,
-	0x6e, 0x75, 0x6d, 0x22, 0x55, 0x0a, 0x06, 0x50, 0x6c, 0x61, 0x63, 0x65, 0x73, 0x12, 0x4b, 0x0a,
-	0x06, 0x70, 0x6c, 0x61, 0x63, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x33, 0x2e,
+	0xb6, 0x01, 0x0a, 0x0a, 0x52, 0x6f, 0x6f, 0x6d, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x4c,
+	0x0a, 0x06, 0x62, 0x65, 0x61, 0x63, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x34,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f,
+	0x63, 0x61, 0x63, 0x74, 0x75, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70,
+	0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x42, 0x65,
+	0x61, 0x63, 0x6f, 0x6e, 0x52, 0x06, 0x62, 0x65, 0x61, 0x63, 0x6f, 0x6e, 0x12, 0x12, 0x0a, 0x04,
+	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65,
+	0x12, 0x46, 0x0a, 0x03, 0x6e, 0x75, 0x6d, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x34, 0x2e,
 	0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f, 0x63,
 	0x61, 0x63, 0x74, 0x75, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70, 0x6f,
-	0x6c, 0x61, 0x72, 0x69, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x50, 0x6c, 0x61,
-	0x63, 0x65, 0x52, 0x06, 0x70, 0x6c, 0x61, 0x63, 0x65, 0x73, 0x32, 0x88, 0x03, 0x0a, 0x0a, 0x52,
-	0x6f, 0x6f, 0x6d, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x83, 0x01, 0x0a, 0x0d, 0x47, 0x65,
-	0x74, 0x52, 0x6f, 0x6f, 0x6d, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x3b, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f, 0x63, 0x61, 0x63,
-	0x74, 0x75, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61,
-	0x72, 0x69, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x41,
-	0x6e, 0x64, 0x42, 0x65, 0x61, 0x63, 0x6f, 0x6e, 0x1a, 0x33, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x67,
-	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f, 0x63, 0x61, 0x63, 0x74, 0x75, 0x73,
-	0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73,
-	0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x50, 0x6c, 0x61, 0x63, 0x65, 0x28, 0x01, 0x12,
-	0x7c, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x52, 0x6f, 0x6f, 0x6d, 0x53, 0x74, 0x61,
-	0x74, 0x75, 0x73, 0x12, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x74, 0x6b, 0x6f, 0x5f, 0x63, 0x61, 0x63, 0x74, 0x75, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61,
-	0x72, 0x69, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76,
-	0x65, 0x72, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x1a, 0x34, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x69,
-	0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f, 0x63, 0x61, 0x63, 0x74, 0x75, 0x73, 0x2e,
-	0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x5f,
-	0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x50, 0x6c, 0x61, 0x63, 0x65, 0x73, 0x12, 0x76, 0x0a,
-	0x0c, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x52, 0x6f, 0x6f, 0x6d, 0x12, 0x32, 0x2e,
+	0x6c, 0x61, 0x72, 0x69, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x50, 0x65, 0x6f,
+	0x70, 0x6c, 0x65, 0x52, 0x03, 0x6e, 0x75, 0x6d, 0x22, 0x68, 0x0a, 0x0e, 0x52, 0x6f, 0x6f, 0x6d,
+	0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x56, 0x0a, 0x09, 0x72, 0x6f,
+	0x6f, 0x6d, 0x53, 0x74, 0x61, 0x74, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x38, 0x2e,
 	0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f, 0x63,
 	0x61, 0x63, 0x74, 0x75, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70, 0x6f,
 	0x6c, 0x61, 0x72, 0x69, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x52, 0x6f, 0x6f,
-	0x6d, 0x1a, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x74,
-	0x6b, 0x6f, 0x5f, 0x63, 0x61, 0x63, 0x74, 0x75, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69,
-	0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72,
-	0x2e, 0x52, 0x6f, 0x6f, 0x6d, 0x42, 0x28, 0x50, 0x01, 0x5a, 0x24, 0x67, 0x69, 0x74, 0x68, 0x75,
-	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x74, 0x6b, 0x6f, 0x2d, 0x63, 0x61, 0x63, 0x74, 0x75, 0x73,
-	0x2f, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6d, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x09, 0x72, 0x6f, 0x6f, 0x6d, 0x53, 0x74, 0x61,
+	0x74, 0x73, 0x32, 0x9d, 0x03, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x52, 0x6f, 0x6f, 0x6d, 0x53, 0x74,
+	0x61, 0x74, 0x75, 0x73, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x88, 0x01, 0x0a, 0x0d, 0x47, 0x65, 0x74,
+	0x52, 0x6f, 0x6f, 0x6d, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x3b, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f, 0x63, 0x61, 0x63, 0x74,
+	0x75, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72,
+	0x69, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x41, 0x6e,
+	0x64, 0x42, 0x65, 0x61, 0x63, 0x6f, 0x6e, 0x1a, 0x38, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x69,
+	0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f, 0x63, 0x61, 0x63, 0x74, 0x75, 0x73, 0x2e,
+	0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x5f,
+	0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x52, 0x6f, 0x6f, 0x6d, 0x53, 0x74, 0x61, 0x74, 0x75,
+	0x73, 0x28, 0x01, 0x12, 0x84, 0x01, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x52, 0x6f,
+	0x6f, 0x6d, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x32, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x67,
+	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f, 0x63, 0x61, 0x63, 0x74, 0x75, 0x73,
+	0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73,
+	0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x55, 0x73, 0x65, 0x72, 0x1a, 0x3c, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f, 0x63, 0x61,
+	0x63, 0x74, 0x75, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70, 0x6f, 0x6c,
+	0x61, 0x72, 0x69, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x52, 0x6f, 0x6f, 0x6d,
+	0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x76, 0x0a, 0x0c, 0x52, 0x65,
+	0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x52, 0x6f, 0x6f, 0x6d, 0x12, 0x32, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f, 0x63, 0x61, 0x63, 0x74,
+	0x75, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72,
+	0x69, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x52, 0x6f, 0x6f, 0x6d, 0x1a, 0x32,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x74, 0x6b, 0x6f, 0x5f,
+	0x63, 0x61, 0x63, 0x74, 0x75, 0x73, 0x2e, 0x70, 0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x2e, 0x70,
+	0x6f, 0x6c, 0x61, 0x72, 0x69, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x2e, 0x52, 0x6f,
+	0x6f, 0x6d, 0x42, 0x28, 0x50, 0x01, 0x5a, 0x24, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2f, 0x74, 0x6b, 0x6f, 0x2d, 0x63, 0x61, 0x63, 0x74, 0x75, 0x73, 0x2f, 0x70, 0x6f,
+	0x6c, 0x61, 0x72, 0x69, 0x73, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -493,29 +438,29 @@ func file_polaris_proto_rawDescGZIP() []byte {
 	return file_polaris_proto_rawDescData
 }
 
-var file_polaris_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_polaris_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_polaris_proto_goTypes = []interface{}{
-	(*User)(nil),          // 0: com.github.tko_cactus.polaris.polaris_server.User
-	(*People)(nil),        // 1: com.github.tko_cactus.polaris.polaris_server.People
-	(*Beacon)(nil),        // 2: com.github.tko_cactus.polaris.polaris_server.Beacon
-	(*UserAndBeacon)(nil), // 3: com.github.tko_cactus.polaris.polaris_server.UserAndBeacon
-	(*Room)(nil),          // 4: com.github.tko_cactus.polaris.polaris_server.Room
-	(*Place)(nil),         // 5: com.github.tko_cactus.polaris.polaris_server.Place
-	(*Places)(nil),        // 6: com.github.tko_cactus.polaris.polaris_server.Places
+	(*People)(nil),         // 0: com.github.tko_cactus.polaris.polaris_server.People
+	(*Beacon)(nil),         // 1: com.github.tko_cactus.polaris.polaris_server.Beacon
+	(*UserAndBeacon)(nil),  // 2: com.github.tko_cactus.polaris.polaris_server.UserAndBeacon
+	(*Room)(nil),           // 3: com.github.tko_cactus.polaris.polaris_server.Room
+	(*RoomStatus)(nil),     // 4: com.github.tko_cactus.polaris.polaris_server.RoomStatus
+	(*RoomStatusList)(nil), // 5: com.github.tko_cactus.polaris.polaris_server.RoomStatusList
+	(*User)(nil),           // 6: com.github.tko_cactus.polaris.polaris_server.User
 }
 var file_polaris_proto_depIdxs = []int32{
-	0, // 0: com.github.tko_cactus.polaris.polaris_server.UserAndBeacon.usr:type_name -> com.github.tko_cactus.polaris.polaris_server.User
-	2, // 1: com.github.tko_cactus.polaris.polaris_server.UserAndBeacon.beacon:type_name -> com.github.tko_cactus.polaris.polaris_server.Beacon
-	2, // 2: com.github.tko_cactus.polaris.polaris_server.Room.beacon:type_name -> com.github.tko_cactus.polaris.polaris_server.Beacon
-	2, // 3: com.github.tko_cactus.polaris.polaris_server.Place.beacon:type_name -> com.github.tko_cactus.polaris.polaris_server.Beacon
-	1, // 4: com.github.tko_cactus.polaris.polaris_server.Place.num:type_name -> com.github.tko_cactus.polaris.polaris_server.People
-	5, // 5: com.github.tko_cactus.polaris.polaris_server.Places.places:type_name -> com.github.tko_cactus.polaris.polaris_server.Place
-	3, // 6: com.github.tko_cactus.polaris.polaris_server.RoomStatus.GetRoomStatus:input_type -> com.github.tko_cactus.polaris.polaris_server.UserAndBeacon
-	0, // 7: com.github.tko_cactus.polaris.polaris_server.RoomStatus.GetAllRoomStatus:input_type -> com.github.tko_cactus.polaris.polaris_server.User
-	4, // 8: com.github.tko_cactus.polaris.polaris_server.RoomStatus.RegisterRoom:input_type -> com.github.tko_cactus.polaris.polaris_server.Room
-	5, // 9: com.github.tko_cactus.polaris.polaris_server.RoomStatus.GetRoomStatus:output_type -> com.github.tko_cactus.polaris.polaris_server.Place
-	6, // 10: com.github.tko_cactus.polaris.polaris_server.RoomStatus.GetAllRoomStatus:output_type -> com.github.tko_cactus.polaris.polaris_server.Places
-	4, // 11: com.github.tko_cactus.polaris.polaris_server.RoomStatus.RegisterRoom:output_type -> com.github.tko_cactus.polaris.polaris_server.Room
+	6, // 0: com.github.tko_cactus.polaris.polaris_server.UserAndBeacon.usr:type_name -> com.github.tko_cactus.polaris.polaris_server.User
+	1, // 1: com.github.tko_cactus.polaris.polaris_server.UserAndBeacon.beacon:type_name -> com.github.tko_cactus.polaris.polaris_server.Beacon
+	1, // 2: com.github.tko_cactus.polaris.polaris_server.Room.beacon:type_name -> com.github.tko_cactus.polaris.polaris_server.Beacon
+	1, // 3: com.github.tko_cactus.polaris.polaris_server.RoomStatus.beacon:type_name -> com.github.tko_cactus.polaris.polaris_server.Beacon
+	0, // 4: com.github.tko_cactus.polaris.polaris_server.RoomStatus.num:type_name -> com.github.tko_cactus.polaris.polaris_server.People
+	4, // 5: com.github.tko_cactus.polaris.polaris_server.RoomStatusList.roomStats:type_name -> com.github.tko_cactus.polaris.polaris_server.RoomStatus
+	2, // 6: com.github.tko_cactus.polaris.polaris_server.GetRoomStatusInfo.GetRoomStatus:input_type -> com.github.tko_cactus.polaris.polaris_server.UserAndBeacon
+	6, // 7: com.github.tko_cactus.polaris.polaris_server.GetRoomStatusInfo.GetAllRoomStatus:input_type -> com.github.tko_cactus.polaris.polaris_server.User
+	3, // 8: com.github.tko_cactus.polaris.polaris_server.GetRoomStatusInfo.RegisterRoom:input_type -> com.github.tko_cactus.polaris.polaris_server.Room
+	4, // 9: com.github.tko_cactus.polaris.polaris_server.GetRoomStatusInfo.GetRoomStatus:output_type -> com.github.tko_cactus.polaris.polaris_server.RoomStatus
+	5, // 10: com.github.tko_cactus.polaris.polaris_server.GetRoomStatusInfo.GetAllRoomStatus:output_type -> com.github.tko_cactus.polaris.polaris_server.RoomStatusList
+	3, // 11: com.github.tko_cactus.polaris.polaris_server.GetRoomStatusInfo.RegisterRoom:output_type -> com.github.tko_cactus.polaris.polaris_server.Room
 	9, // [9:12] is the sub-list for method output_type
 	6, // [6:9] is the sub-list for method input_type
 	6, // [6:6] is the sub-list for extension type_name
@@ -528,20 +473,9 @@ func file_polaris_proto_init() {
 	if File_polaris_proto != nil {
 		return
 	}
+	file_user_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_polaris_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*User); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_polaris_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*People); i {
 			case 0:
 				return &v.state
@@ -553,7 +487,7 @@ func file_polaris_proto_init() {
 				return nil
 			}
 		}
-		file_polaris_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_polaris_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Beacon); i {
 			case 0:
 				return &v.state
@@ -565,7 +499,7 @@ func file_polaris_proto_init() {
 				return nil
 			}
 		}
-		file_polaris_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_polaris_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserAndBeacon); i {
 			case 0:
 				return &v.state
@@ -577,7 +511,7 @@ func file_polaris_proto_init() {
 				return nil
 			}
 		}
-		file_polaris_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_polaris_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Room); i {
 			case 0:
 				return &v.state
@@ -589,8 +523,8 @@ func file_polaris_proto_init() {
 				return nil
 			}
 		}
-		file_polaris_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Place); i {
+		file_polaris_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RoomStatus); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -601,8 +535,8 @@ func file_polaris_proto_init() {
 				return nil
 			}
 		}
-		file_polaris_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Places); i {
+		file_polaris_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RoomStatusList); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -620,7 +554,7 @@ func file_polaris_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_polaris_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   7,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -642,131 +576,131 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// RoomStatusClient is the client API for RoomStatus service.
+// GetRoomStatusInfoClient is the client API for GetRoomStatusInfo service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type RoomStatusClient interface {
+type GetRoomStatusInfoClient interface {
 	// Bidirectiuonal streaming
 	// 部屋に入っていることを伝える
-	GetRoomStatus(ctx context.Context, opts ...grpc.CallOption) (RoomStatus_GetRoomStatusClient, error)
+	GetRoomStatus(ctx context.Context, opts ...grpc.CallOption) (GetRoomStatusInfo_GetRoomStatusClient, error)
 	// Unary rpc
 	// 登録した部屋の在室状況を取得する
-	GetAllRoomStatus(ctx context.Context, in *User, opts ...grpc.CallOption) (*Places, error)
+	GetAllRoomStatus(ctx context.Context, in *User, opts ...grpc.CallOption) (*RoomStatusList, error)
 	// Unary rpc
 	// 部屋とビーコンを新しく追加する
 	RegisterRoom(ctx context.Context, in *Room, opts ...grpc.CallOption) (*Room, error)
 }
 
-type roomStatusClient struct {
+type getRoomStatusInfoClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewRoomStatusClient(cc grpc.ClientConnInterface) RoomStatusClient {
-	return &roomStatusClient{cc}
+func NewGetRoomStatusInfoClient(cc grpc.ClientConnInterface) GetRoomStatusInfoClient {
+	return &getRoomStatusInfoClient{cc}
 }
 
-func (c *roomStatusClient) GetRoomStatus(ctx context.Context, opts ...grpc.CallOption) (RoomStatus_GetRoomStatusClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_RoomStatus_serviceDesc.Streams[0], "/com.github.tko_cactus.polaris.polaris_server.RoomStatus/GetRoomStatus", opts...)
+func (c *getRoomStatusInfoClient) GetRoomStatus(ctx context.Context, opts ...grpc.CallOption) (GetRoomStatusInfo_GetRoomStatusClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_GetRoomStatusInfo_serviceDesc.Streams[0], "/com.github.tko_cactus.polaris.polaris_server.GetRoomStatusInfo/GetRoomStatus", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &roomStatusGetRoomStatusClient{stream}
+	x := &getRoomStatusInfoGetRoomStatusClient{stream}
 	return x, nil
 }
 
-type RoomStatus_GetRoomStatusClient interface {
+type GetRoomStatusInfo_GetRoomStatusClient interface {
 	Send(*UserAndBeacon) error
-	CloseAndRecv() (*Place, error)
+	CloseAndRecv() (*RoomStatus, error)
 	grpc.ClientStream
 }
 
-type roomStatusGetRoomStatusClient struct {
+type getRoomStatusInfoGetRoomStatusClient struct {
 	grpc.ClientStream
 }
 
-func (x *roomStatusGetRoomStatusClient) Send(m *UserAndBeacon) error {
+func (x *getRoomStatusInfoGetRoomStatusClient) Send(m *UserAndBeacon) error {
 	return x.ClientStream.SendMsg(m)
 }
 
-func (x *roomStatusGetRoomStatusClient) CloseAndRecv() (*Place, error) {
+func (x *getRoomStatusInfoGetRoomStatusClient) CloseAndRecv() (*RoomStatus, error) {
 	if err := x.ClientStream.CloseSend(); err != nil {
 		return nil, err
 	}
-	m := new(Place)
+	m := new(RoomStatus)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
 	return m, nil
 }
 
-func (c *roomStatusClient) GetAllRoomStatus(ctx context.Context, in *User, opts ...grpc.CallOption) (*Places, error) {
-	out := new(Places)
-	err := c.cc.Invoke(ctx, "/com.github.tko_cactus.polaris.polaris_server.RoomStatus/GetAllRoomStatus", in, out, opts...)
+func (c *getRoomStatusInfoClient) GetAllRoomStatus(ctx context.Context, in *User, opts ...grpc.CallOption) (*RoomStatusList, error) {
+	out := new(RoomStatusList)
+	err := c.cc.Invoke(ctx, "/com.github.tko_cactus.polaris.polaris_server.GetRoomStatusInfo/GetAllRoomStatus", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *roomStatusClient) RegisterRoom(ctx context.Context, in *Room, opts ...grpc.CallOption) (*Room, error) {
+func (c *getRoomStatusInfoClient) RegisterRoom(ctx context.Context, in *Room, opts ...grpc.CallOption) (*Room, error) {
 	out := new(Room)
-	err := c.cc.Invoke(ctx, "/com.github.tko_cactus.polaris.polaris_server.RoomStatus/RegisterRoom", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/com.github.tko_cactus.polaris.polaris_server.GetRoomStatusInfo/RegisterRoom", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// RoomStatusServer is the server API for RoomStatus service.
-type RoomStatusServer interface {
+// GetRoomStatusInfoServer is the server API for GetRoomStatusInfo service.
+type GetRoomStatusInfoServer interface {
 	// Bidirectiuonal streaming
 	// 部屋に入っていることを伝える
-	GetRoomStatus(RoomStatus_GetRoomStatusServer) error
+	GetRoomStatus(GetRoomStatusInfo_GetRoomStatusServer) error
 	// Unary rpc
 	// 登録した部屋の在室状況を取得する
-	GetAllRoomStatus(context.Context, *User) (*Places, error)
+	GetAllRoomStatus(context.Context, *User) (*RoomStatusList, error)
 	// Unary rpc
 	// 部屋とビーコンを新しく追加する
 	RegisterRoom(context.Context, *Room) (*Room, error)
 }
 
-// UnimplementedRoomStatusServer can be embedded to have forward compatible implementations.
-type UnimplementedRoomStatusServer struct {
+// UnimplementedGetRoomStatusInfoServer can be embedded to have forward compatible implementations.
+type UnimplementedGetRoomStatusInfoServer struct {
 }
 
-func (*UnimplementedRoomStatusServer) GetRoomStatus(RoomStatus_GetRoomStatusServer) error {
+func (*UnimplementedGetRoomStatusInfoServer) GetRoomStatus(GetRoomStatusInfo_GetRoomStatusServer) error {
 	return status.Errorf(codes.Unimplemented, "method GetRoomStatus not implemented")
 }
-func (*UnimplementedRoomStatusServer) GetAllRoomStatus(context.Context, *User) (*Places, error) {
+func (*UnimplementedGetRoomStatusInfoServer) GetAllRoomStatus(context.Context, *User) (*RoomStatusList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllRoomStatus not implemented")
 }
-func (*UnimplementedRoomStatusServer) RegisterRoom(context.Context, *Room) (*Room, error) {
+func (*UnimplementedGetRoomStatusInfoServer) RegisterRoom(context.Context, *Room) (*Room, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterRoom not implemented")
 }
 
-func RegisterRoomStatusServer(s *grpc.Server, srv RoomStatusServer) {
-	s.RegisterService(&_RoomStatus_serviceDesc, srv)
+func RegisterGetRoomStatusInfoServer(s *grpc.Server, srv GetRoomStatusInfoServer) {
+	s.RegisterService(&_GetRoomStatusInfo_serviceDesc, srv)
 }
 
-func _RoomStatus_GetRoomStatus_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(RoomStatusServer).GetRoomStatus(&roomStatusGetRoomStatusServer{stream})
+func _GetRoomStatusInfo_GetRoomStatus_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(GetRoomStatusInfoServer).GetRoomStatus(&getRoomStatusInfoGetRoomStatusServer{stream})
 }
 
-type RoomStatus_GetRoomStatusServer interface {
-	SendAndClose(*Place) error
+type GetRoomStatusInfo_GetRoomStatusServer interface {
+	SendAndClose(*RoomStatus) error
 	Recv() (*UserAndBeacon, error)
 	grpc.ServerStream
 }
 
-type roomStatusGetRoomStatusServer struct {
+type getRoomStatusInfoGetRoomStatusServer struct {
 	grpc.ServerStream
 }
 
-func (x *roomStatusGetRoomStatusServer) SendAndClose(m *Place) error {
+func (x *getRoomStatusInfoGetRoomStatusServer) SendAndClose(m *RoomStatus) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func (x *roomStatusGetRoomStatusServer) Recv() (*UserAndBeacon, error) {
+func (x *getRoomStatusInfoGetRoomStatusServer) Recv() (*UserAndBeacon, error) {
 	m := new(UserAndBeacon)
 	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -774,59 +708,59 @@ func (x *roomStatusGetRoomStatusServer) Recv() (*UserAndBeacon, error) {
 	return m, nil
 }
 
-func _RoomStatus_GetAllRoomStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GetRoomStatusInfo_GetAllRoomStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(User)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(RoomStatusServer).GetAllRoomStatus(ctx, in)
+		return srv.(GetRoomStatusInfoServer).GetAllRoomStatus(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/com.github.tko_cactus.polaris.polaris_server.RoomStatus/GetAllRoomStatus",
+		FullMethod: "/com.github.tko_cactus.polaris.polaris_server.GetRoomStatusInfo/GetAllRoomStatus",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RoomStatusServer).GetAllRoomStatus(ctx, req.(*User))
+		return srv.(GetRoomStatusInfoServer).GetAllRoomStatus(ctx, req.(*User))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _RoomStatus_RegisterRoom_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _GetRoomStatusInfo_RegisterRoom_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Room)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(RoomStatusServer).RegisterRoom(ctx, in)
+		return srv.(GetRoomStatusInfoServer).RegisterRoom(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/com.github.tko_cactus.polaris.polaris_server.RoomStatus/RegisterRoom",
+		FullMethod: "/com.github.tko_cactus.polaris.polaris_server.GetRoomStatusInfo/RegisterRoom",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RoomStatusServer).RegisterRoom(ctx, req.(*Room))
+		return srv.(GetRoomStatusInfoServer).RegisterRoom(ctx, req.(*Room))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _RoomStatus_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "com.github.tko_cactus.polaris.polaris_server.RoomStatus",
-	HandlerType: (*RoomStatusServer)(nil),
+var _GetRoomStatusInfo_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "com.github.tko_cactus.polaris.polaris_server.GetRoomStatusInfo",
+	HandlerType: (*GetRoomStatusInfoServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "GetAllRoomStatus",
-			Handler:    _RoomStatus_GetAllRoomStatus_Handler,
+			Handler:    _GetRoomStatusInfo_GetAllRoomStatus_Handler,
 		},
 		{
 			MethodName: "RegisterRoom",
-			Handler:    _RoomStatus_RegisterRoom_Handler,
+			Handler:    _GetRoomStatusInfo_RegisterRoom_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "GetRoomStatus",
-			Handler:       _RoomStatus_GetRoomStatus_Handler,
+			Handler:       _GetRoomStatusInfo_GetRoomStatus_Handler,
 			ClientStreams: true,
 		},
 	},
