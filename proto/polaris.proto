@@ -1,38 +1,31 @@
 syntax = "proto3";
 
-package io.grpc.polaris;
+package com.github.tko_cactus.polaris.polaris_server;
 
-option go_package = "github.com/tko-cactus/polaris/server/protos/src/proto/io/grpc/polaris";
+option go_package = "github.com/tko-cactus/polaris/server";
 option java_multiple_files = true;
 
 
 service RoomStatus {
   // Bidirectiuonal streaming
-  // 部屋のビーコンを受信している間、在室していることを伝え続ける
-  // （送信）今いる部屋のビーコン情報
-  // （受信）今いる部屋の在室状況
-  rpc GetRoomStatus(stream Beacon) returns (Place);
+  // 部屋に入っていることを伝える
+  rpc GetRoomStatus(stream UserAndBeacon) returns (Place);
 
   // Unary rpc
   // 登録した部屋の在室状況を取得する
   rpc GetAllRoomStatus(User) returns (Places);
 
   // Unary rpc
-  // 既に登録された部屋にユーザを新しく登録する
-  rpc RegisterUser(User) returns (Places);
-
-  // Unary rpc
   // 部屋とビーコンを新しく追加する
   rpc RegisterRoom(Room) returns (Room);
 }
 
-
+// ユーザ情報
 message User {
   int64 id = 1;
   string name = 2;
 }
 
-// 
 message People {
   int32 numOfPerson = 1;
 }
@@ -40,6 +33,11 @@ message People {
 // ビーコンの情報
 message Beacon {
   int32 id = 1;
+}
+
+message UserAndBeacon {
+  User usr = 1;
+  Beacon beacon = 2;
 }
 
 // 1つの部屋の情報
