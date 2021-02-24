@@ -1,18 +1,19 @@
 syntax = "proto3";
 
-package com.github.tko_cactus.polaris.polaris_server;
+package com.github.tko_cactus.polaris.polaris_server.proto;
 
-option go_package = "com.github.tko-cactus.polaris.polaris_server.pb";
+option go_package = "github.com/tko-cactus/polaris/polaris_server/pb;pb";
 
 service UserService {
   // ユーザ登録
-  rpc RegisterUser(UserName) returns (Response);
+  rpc RegisterUser(UserName) returns (User);
   // アカウント削除
   rpc RemoveUser(User) returns (Response);
 }
 
 message Response {
-  string message = 1;
+  User usr = 1;
+  string msg = 2;
 }
 
 message UserName {

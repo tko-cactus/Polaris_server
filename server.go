@@ -6,19 +6,19 @@ import (
 	"errors"
 	"log"
 
-	pb "github.com/tko-cactus/polaris/polaris_server/pb"
+	"github.com/tko-cactus/polaris/polaris_server/pb/github.com/tko-cactus/polaris/polaris_server/pb"
 )
 
 const port = ":54511"
 
-type UserService struct {
+type PolarisService struct {
 }
 
-func GetRoomsStatus() {
+func (s *PolarisService) GetRoomsStatus(ctx context.Context, in *pb.UserAndBeacon) *pb.RoomStatus {
 
 }
 
-func (s *UserService) RegisterUserServiceServer(ctx context.Context, in *pb.User) (*pb.Response, error) {
+func (s *PolarisService) RegisterUserServiceServer(ctx context.Context, in *pb.UserName) (*pb.User, error) {
 	// dbに接続
 	db, err := sql.Open("mysql", "root@/my_database")
 	if err != nil {
@@ -27,20 +27,25 @@ func (s *UserService) RegisterUserServiceServer(ctx context.Context, in *pb.User
 	defer db.Close()
 
 	// ユーザー情報を取得
-	var id = db.QueryRow("SELECT id FROM Users WHERE id = MAX(id)")
-	var uname = in.Name
+	res := pb.User{
+		Id:   0,
+		Name: in.Uname,
+	}
+	// var usrid, err = db.QueryRow("SELECT id FROM Users WHERE id = MAX(id)")
+	// var uname = in.Uname
 
 	// Prepared Statements
 	stmtInsert, err := db.Prepare("INSERT INTO users(name) VALUES(?)")
 	if err != nil {
-		return nil, err
+		return nil, errors.New("Prepared Statement Error")
 	}
 	defer stmtInsert.Close()
 
 	// 新しいユーザー情報を登録する
-	db.Query("INSERT INTO Users VALUES (?, ?)", id, uname)
+	db.Query("INSERT INTO Users VALUES (?, ?)", res.Id, res.Name)
 	if err != nil {
 		log.Fatal(err)
+		return nil, errors.New("Register Error")
 	}
-	return nil, errors.New("raise error")
+	return &res, nil
 }

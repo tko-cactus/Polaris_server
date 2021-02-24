@@ -1,11 +1,14 @@
 syntax = "proto3";
 
-package com.github.tko_cactus.polaris.polaris_server;
+package com.github.tko_cactus.polaris.polaris_server.proto;
 
-import "user.proto";
+import "proto/user.proto";
+// import "polaris_server/proto/user.proto";
 
 
-option go_package = "com.github.tko-cactus.polaris.polaris_server.pb";
+// option go_package = "com.github.tko-cactus.polaris.polaris_server.pb";
+option go_package = "github.com/tko-cactus/polaris/polaris_server/pb;pb";
+// option go_package = "pb";
 option java_multiple_files = true;
 
 
